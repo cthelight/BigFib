@@ -684,7 +684,7 @@ bool BigNum::operator==(const BigNum &b) {
 	return false;
 }
 bool BigNum::operator >=(const BigNum &b) {
-	return !(this < b);
+	return !(*this < b);
 }
 bool BigNum::operator !=(const BigNum &b) {
 	return !(*this == b);
