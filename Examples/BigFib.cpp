@@ -1,4 +1,4 @@
-#include "BigNum.h"
+#include "../BigNum.h"
 #include <time.h>
 
 BigNum getFib(int num);
