@@ -11,9 +11,11 @@ int main(int argc, char *argv[])
 		clock_t start = clock();
 		int i = atoi(argv[1]);
 
-		getFib(i).print();
+		BigNum fib = getFib(i);
+		fib.print();
 
 		clock_t end = clock();
+		std::cout << "Total Length of Output: " << fib.length() << std::endl;
 		std::cout << "Time to complete: " << (double)(end - start) / CLOCKS_PER_SEC << " s" << std::endl;
 	}
 	else

@@ -46,6 +46,8 @@ public:
 
 	void print();
 
+	long length();
+
 	friend BigNum operator+(const int &a, const BigNum &b);
 	friend BigNum operator+(const long &a, const BigNum &b);
 	friend BigNum operator-(const int &a, const BigNum &b);
@@ -688,6 +690,16 @@ bool BigNum::operator >=(const BigNum &b) {
 }
 bool BigNum::operator !=(const BigNum &b) {
 	return !(*this == b);
+}
+
+long BigNum::length(){
+	long length = (numUsed - 1) * WIDTH_OF_OUTPUT;
+	long val = 1;
+	while(val < valArr[numUsed - 1]){
+		val *= 10;
+		length += 1;
+	}
+	return length;
 }
 
 
