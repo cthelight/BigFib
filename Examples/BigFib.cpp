@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 {
 	if (argc > 1)
 	{
-		clock_t start = clock();
+		time_t start = time(NULL);
 		int i = atoi(argv[1]);
 		sem_init(&sem_main, 0, 0);
 		sem_init(&sems[0], 0, 0);
@@ -31,9 +31,9 @@ int main(int argc, char *argv[])
 		BigNum fib = getFib(i);
 		fib.print();
 
-		clock_t end = clock();
+		time_t end = time(NULL);
 		std::cout << "Total Length of Output: " << fib.length() << std::endl;
-		std::cout << "Time to complete: " << (double)(end - start) / CLOCKS_PER_SEC << " s" << std::endl;
+		std::cout << "Time to complete: " << (end - start) << "s" << std::endl;
 	}
 	else
 	{
